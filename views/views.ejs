@@ -1,0 +1,23 @@
+<h1>Current Rappers</h1>
+<ul class="rappers">
+<%# This code loops through info, which is just our array of objects%>
+<%# We don't know how many rappers will be added to our collection, which is why we are using a for loop. A loop will account for as many rappers we want to include%>
+
+<% for(let i=0; i < info.length; i++) {%>
+    <li class="rapper">
+        <span><%= info[i].stageName %></span>
+        <span><%= info[i].birthName %></span>
+        <span class='del'>delete</span>
+    </li>
+<% } %>
+</ul>
+
+<h2>Add A Rapper:</h2>
+
+<form action="/addRapper" method="POST">
+    <input type="text" placeholder="Stage Name" name="stageName">
+    <input type="text" placeholder="Birth Name" name="birthName">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="/js/main.js"></script>
